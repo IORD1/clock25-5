@@ -1,4 +1,14 @@
+window.onload = function() {
+  func();
+};
 
+const splash = document.querySelector('.splash');
+
+document.addEventListener('DOMContentLoaded',(e) => {
+  setTimeout(()=>{
+      splash.classList.add('display-none');
+  },1000);
+})
 
 var min = 25;
 var sec = "00";
@@ -68,10 +78,8 @@ function minc () {
 
 function onpower(){
   if(power == 0){
-    alert(0);
     power = 1;
   }else{
-    alert(1);
     power = 0;
   }
 
@@ -101,7 +109,6 @@ function checker(){
 
 function start () {
   if(power == 1){
-    console.log(1);
     if(sec == '00'){
       if(min == 0 && sec == 0){
         if(isbreak == 0 && blen != 0){
@@ -163,7 +170,6 @@ function start () {
     }
 
   }
-  console.log(0);
 
 }
 

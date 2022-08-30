@@ -162,18 +162,128 @@ body{
     'opsz' 48,
   }
 
-  @media only screen and (max-device-width: 400px) {
-    #box{
-      width: 100%;
-      height: 30vh;
+
+
+  
+  /* 
+  expermient splash screen*/
+  
+  .splash{
+    position: fixed;
+    top: 0;
+    font-family: 'Silkscreen', cursive;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color:black;
+    z-index: 200;
+    color: white;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .splash.display-none{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    z-index: -10;
+    color: white;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 1s;
+  }
+  
+  @keyframes inc{
+    0%{
+      width: 0px;
+      height: 0px;
     }
   
-    #main-box{
-      width: auto;
+    75%{
+      width: 0px;
+      height: 0px;
     }
   
-    #box-head{
-      width: auto;
-      margin-bottom: 30px;
+    100% {
+      opacity: 1;
+      width: 300%;
+      height: 300%;
     }
   }
+  
+  .circle{
+    z-index: 201;
+    border-radius: 1000px;
+    background-color: rgb(255, 255, 255);
+    animation: inc 2s forwards;
+    opacity: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 55px;
+  }
+  
+
+@media only screen and (max-device-width: 400px) {
+  #box{
+    width: 100%;
+    height: 70vh;
+  }
+  #box-head{
+    font-size: 130px;
+  }
+
+  #break-label{
+    font-size: 55px;
+  }
+  
+  #session-label{
+    font-size: 55px;
+  }
+
+  .arrows{
+    width: auto;
+    font-size: 85px;
+  }
+  .arrows span{
+    font-size: 95px;
+  }
+
+  #timer-label{
+    margin-top: 15px;
+    font-size: 100px;
+  }
+  #time-left{
+    font-size: 180px;
+  }
+
+  #main-box{
+    width: 90%;
+    border-radius: 2000px;
+  }
+  .buttons span{
+    font-size: 130px;
+    margin-left: 130px;
+  }
+  #play_pause-icon{
+    font-size: 220px;
+    margin-right: 250px;
+  }
+
+  #by-box{
+    font-size: 40px;
+  }
+  #by-name a{
+    font-size: 45px;
+  }
+  .circle{
+    font-size: 130px;
+  }
+}
