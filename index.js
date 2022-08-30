@@ -68,8 +68,10 @@ function minc () {
 
 function onpower(){
   if(power == 0){
+    alert(0);
     power = 1;
   }else{
+    alert(1);
     power = 0;
   }
 
@@ -99,6 +101,7 @@ function checker(){
 
 function start () {
   if(power == 1){
+    console.log(1);
     if(sec == '00'){
       if(min == 0 && sec == 0){
         if(isbreak == 0 && blen != 0){
@@ -142,7 +145,7 @@ function start () {
           min = '0' + (min -1);
           document.getElementById("time-left-min").innerHTML = min;
         }else{
-          min = minSession - 1;
+          min = min - 1;
           document.getElementById("time-left-min").innerHTML = min;
         }
         sec = 59;
@@ -160,6 +163,7 @@ function start () {
     }
 
   }
+  console.log(0);
 
 }
 
@@ -177,5 +181,6 @@ function restart () {
 
 
 var intervalId = window.setInterval(function(){
+
   start();
 }, 1000);  ;
